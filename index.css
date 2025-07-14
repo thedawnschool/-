@@ -1,0 +1,584 @@
+body{
+
+    margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000000; /* أبيض دافئ */
+  color: #fdfcfb;; /* بني */
+
+
+}
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+}
+
+
+    
+.mm{
+  width: 85px;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 50%; /* يجعلها دائرية إذا أردت */
+  margin-right: 10px;
+        
+     }
+    .ss{
+        font-family:sans-serif;
+    }
+    .p{
+        margin: 0.5em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .ll{
+        position: relative;
+        left: 15%;  
+        text-shadow: 2px 2px 0px rgb(0, 0, 0);
+    }
+         
+    
+  
+
+.h1{
+    
+
+     position: relative;
+     text-align: center;
+     opacity: 5;
+             transform: translateY(100px); /* يبدأ من الأسفل */
+  animation: fadeInUp 1.5s ease-out forwards;
+      
+    
+   
+    font-family:'Times New Roman', Times, serif;
+    font-style:oblique;
+     font-size: 50px;
+    color: rgb(252, 252, 252);
+    text-shadow: 5px 5px 0px rgba(82, 68, 68, 0);
+    
+    }
+.h1:hover{
+     cursor: pointer;
+    box-shadow: 4px -4px 4px rgb(18, 17, 17);
+    }
+  
+    .text {
+  line-height: 1.2;
+    }
+    .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-weight: bold;
+  font-size: 24px;
+}
+ 
+    
+    h2{
+         margin: 0.5em;
+        color: hwb(146 42% 34%);
+        opacity: 3;
+          transform: translateY(100px); /* يبدأ من الأسفل */
+  animation: fadeInUp 1s ease-out forwards;
+
+        
+    }
+    h3{
+       color: rgb(250, 250, 250);
+         opacity: 0;
+  transform: translateX(100px);
+  animation: slideFromRight 1.2s ease-out forwards;
+
+    }
+    @keyframes slideFromRight {
+  to {
+    opacity: 3;
+    transform: translateX(0);
+  }
+}
+
+   @keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    p{  color: antiquewhite;}
+    
+    header {
+    
+  
+      background-color: #f6f3f3;
+      padding: 20px;
+      border-bottom: 1px solid #3b2424;
+      text-align: center;
+      gap:20px
+      
+    }
+    .header-strip {
+  height: 2px;
+  background:linear-gradient(to left,rgb(253, 249, 249),rgb(4, 63, 241)); /* أو أي لون تريده */
+}
+   .footer-strip {
+  height: 2px;
+  background: linear-gradient(to right, white, #11f40d);
+}
+
+
+    .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  padding: 12px 20px;
+  background-color: hsla(210, 81%, 32%, 0.945);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  box-shadow: 0 8px 16px rgb(248, 249, 249);
+  width: 220px;
+  z-index: 10;
+}
+.dropdown-menu,
+.sub-menu {
+  max-height: 250px; /* أو أي ارتفاع يناسب التصميم */
+  overflow-y: auto;
+  scrollbar-width: thin; /* لأناقة التمرير في فايرفوكس */
+}
+
+/* تخصيص شكل شريط التمرير (اختياري) */
+.dropdown-menu::-webkit-scrollbar,
+.sub-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb,
+.sub-menu::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover,
+.sub-menu::-webkit-scrollbar-thumb:hover {
+  background: #fffefe;
+}
+
+
+.dropdown-item {
+  border-bottom: 1px solid #070303;
+  text-align: left;
+}
+
+
+.dropdown-item a,
+.sub-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  text-decoration: none;
+  color: #000000;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+    max-height: 250px; /* أو أي ارتفاع مناسب */
+  overflow-y: auto;
+
+}
+
+
+
+/* التأثير عند الضغط */
+
+.dropdown-item a:hover,
+.sub-btn:hover,
+.dropdown-btn:hover {
+  background-color: #09a611;
+}
+
+
+.sub-menu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  background-color: #aeb4b8;
+}
+
+.arrow {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+
+/* دوران السهم عند الفتح */
+.open .arrow {
+  transform: rotate(180deg);
+}
+    .navbar {
+  background-color: #004080;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+}
+
+
+
+
+
+
+
+/* Responsive */
+
+    
+    
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 30px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #25404b; /* لون عند التحويل (يمكنك تغييره) */
+}
+
+    
+
+    .carousel-wrapper {
+      overflow: hidden;
+      width: 100%;
+      background: #fff;
+      padding: 20px 0;
+    }
+
+    .carousel {
+      display: flex;
+      gap: 15px;
+      width: max-content; 
+      animation: scroll 20s linear infinite;
+      
+    }
+
+    .carousel img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .carousel img:hover {
+      transform: scale(1.05);
+    }
+
+     @keyframes  scroll {
+      from {
+        transform: translateX(50%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    } 
+    
+
+    /* نافذة الوصف */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+    }
+    .modal-content p {
+      color: #3b2424;
+  max-height: 100px;      /* الحد الأقصى لارتفاع الوصف */
+  overflow-y: auto;       /* إضافة شريط تمرير عند الحاجة */
+  word-wrap: break-word;  /* لف الكلمات الطويلة تلقائيًا */
+  text-align: right;      /* أو left حسب اللغة */
+  margin-top: 10px;
+}
+
+    .modal-content {
+      background: white;
+      max-width: 400px;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      text-align: center;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+ 
+.navbar {
+  background-color: #ef080800;
+  color: rgb(246, 244, 244);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  border-radius: 10px;
+  
+}
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, #ffffff, #00aaff);
+  margin: 20px 0;
+  border-radius: 5px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+/* تأكد من أن القائمة لا تظهر تلقائيًا على الشاشات الكبيرة */
+
+
+
+.p1{  opacity: 0;
+  transform: translateY(-100px);
+  animation: slideFromTop 1.2s ease-out forwards;
+  animation-delay: 1s;}
+  @keyframes slideFromTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.menu-btna{
+  color: #000000;
+}
+.p2{
+  opacity: 3;
+   transform: translateX(100px);
+  animation: slideFromRight 1.2s ease-out forwards;
+
+}
+.reveal-text {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.3s ease-out;
+}
+
+.reveal-text.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+  .custom-menu-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 1100;
+    }
+    
+    .custom-menu-btn span {
+      height: 4px;
+      width: 100%;
+      background-color: #333;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+
+    .custom-menu-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .custom-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .custom-menu-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* الخلفية */
+    .custom-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .custom-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* القائمة الجانبية */
+    .custom-sidebar {
+      
+      position: fixed;
+      top: 0;
+      right: -50%;
+      height: 100vh;
+      width: 50%;
+    
+      padding: 40px 20px;
+  
+      transition: right 0.3s ease;
+      z-index: 1050;
+    }
+
+    .custom-sidebar.show {
+          height: 100vh;           /* تملأ ارتفاع الشاشة */
+  overflow-y: auto;        /* يُظهر شريط تمرير عند الحاجة */
+
+      right: 0;
+      background: hsl(0, 0%, 100%);
+    }
+
+    .custom-sidebar ul {
+        height: 100vh;           /* تملأ ارتفاع الشاشة */
+  overflow-y: auto;        /* يُظهر شريط تمرير عند الحاجة */
+
+      list-style: none;
+    }
+
+    .custom-sidebar li {
+      margin: 20px 0;
+    }
+
+    .custom-sidebar a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin: 20px;
+        
+      
+    }
+
+    .dropdown-btn {
+      background-color: #3e3e3e;
+      color: white;
+      padding: 5px 5px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: px;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      gap: 50px;
+      
+    }
+
+    .dropdown-btn:hover {
+      background-color: #08ab36;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+      font-size: 16px;
+    }
+
+    .arrow.rotate {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-content {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: white;
+      min-width: 220px;
+      border-radius: 8px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+      z-index: 10;
+      text-align: center;
+
+    }
+
+    .dropdown-content.show {
+      max-height: 1000px;
+      opacity: 1;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 14px 20px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.2s ease;
+      text-shadow: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f2f2f2;
+    }
+    .dropdown{
+      text-align: center;
+    }
+
+    

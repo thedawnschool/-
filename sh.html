@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title> My school </title>
+    <link rel="icon" href="ii.png" type="image/png">
+  <style>
+    body {
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      direction: rtl;
+      margin: 0;
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      text-align: right;
+      position: relative;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .form-group input {
+      width: 90%;
+      padding: 10px 40px 10px 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .form-group .eye-icon {
+      position: absolute;
+      left: 10px;
+      top: 37px;
+      cursor: pointer;
+      font-size: 18px;
+      color: #666;
+      user-select: none;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #000001;
+      color: rgb(119, 63, 63);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #3b3f9f;
+    }
+
+    .error-message {
+      color: rgb(92, 30, 30);
+      margin-top: 10px;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 10px;
+    }
+
+    .toggle-link {
+      margin-top: 15px;
+      color: #03030b;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .post-register-buttons {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .post-register-buttons .btn {
+      width: 48%;
+      margin: 5px 1%;
+    }
+  </style>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<div class="login-container">
+  <h2 id="form-title"> LOG IN</h2>
+
+  <form id="loginForm" autocomplete="off">
+    <div class="form-group">
+      <label for="studentName">Students Name</label>
+      <input type="text" id="studentName" required autocomplete="off" />
+    </div>
+
+    <div class="form-group">
+      <label for="studentID">Students Number </label>
+      <input type="text" id="studentID" required autocomplete="off" />
+    </div>
+
+    <div class="form-group">
+      <label for="password"> Password</label>
+      <input type="password" id="password" required autocomplete="new-password" />
+      <span class="eye-icon" id="togglePassword">👁️‍🗨</span>
+    </div>
+
+    <button type="submit" class="btn" id="submitBtn">ENTER</button>
+    <button type="button" class="btn" id="registerBtn" style="display: none;"> CREAT ACCOUNT</button>
+
+    <div class="toggle-link" id="toggleForm">CREAT NEW ACCOUNT  </div>
+    <div class="error-message" id="errorMessage"></div>
+    <div class="success-message" id="successMessage"></div>
+  </form>
+
+  <div class="post-register-buttons" id="afterRegisterButtons">
+    <P>Your account have been created</P>
+    <button class="btn" onclick="showLoginForm()">LOG IN</button>
+    <button class="btn" onclick="goToHome()">   BACK TO THE HOME PAGE </button>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById("loginForm");
+  const toggle = document.getElementById("toggleForm");
+  const title = document.getElementById("form-title");
+  const submitBtn = document.getElementById("submitBtn");
+  const registerBtn = document.getElementById("registerBtn");
+  const errorMsg = document.getElementById("errorMessage");
+  const successMsg = document.getElementById("successMessage");
+  const afterRegisterButtons = document.getElementById("afterRegisterButtons");
+  const togglePasswordIcon = document.getElementById("togglePassword");
+  const passwordInput = document.getElementById("password");
+
+  let isRegistering = false;
+  let loginAttempts = 0;
+  const maxAttempts = 5;
+
+  // ✅ أيقونة العين الاحترافية
+  togglePasswordIcon.addEventListener("click", () => {
+    const type = passwordInput.type === "password" ? "text" : "password";
+    passwordInput.type = type;
+    togglePasswordIcon.textContent = type === "password" ? "👁️‍🗨" : "👁️‍🗨";
+  });
+
+  // ✅ منع الملء التلقائي
+  function clearAutofill() {
+    document.getElementById("studentName").value = "";
+    document.getElementById("studentID").value = "";
+    passwordInput.value = "";
+    passwordInput.setAttribute("autocomplete", "new-password");
+  }
+
+  toggle.addEventListener("click", () => {
+    isRegistering = !isRegistering;
+    toggleFormState();
+    clearAutofill();
+  });
+
+  function toggleFormState() {
+    if (isRegistering) {
+      title.textContent = " CREAT NEW ACCOUNT ";
+      submitBtn.style.display = "none";
+      registerBtn.style.display = "block";
+      toggle.textContent = "   LOG IN";
+      successMsg.textContent = "";
+      errorMsg.textContent = "";
+    } else {
+      title.textContent = "LOG IN ";
+      submitBtn.style.display = "block";
+      registerBtn.style.display = "none";
+      toggle.textContent = "  CREAT NEW ACCOUNT";
+      successMsg.textContent = "";
+      errorMsg.textContent = "";
+    }
+  }
+
+  registerBtn.addEventListener("click", () => {
+    const name = document.getElementById("studentName").value.trim();
+    const id = document.getElementById("studentID").value.trim();
+    const password = passwordInput.value;
+
+    if (name && id && password) {
+      localStorage.setItem("studentName", name);
+      localStorage.setItem("studentID", id);
+      localStorage.setItem("password", password);
+      loginAttempts = 0;
+      localStorage.setItem("loginAttempts", loginAttempts);
+      successMsg.textContent = "تم إنشاء الحساب بنجاح!";
+      errorMsg.textContent = "";
+
+      form.style.display = "none";
+      afterRegisterButtons.style.display = "flex";
+    } else {
+      errorMsg.textContent = "يرجى ملء جميع الحقول.";
+      successMsg.textContent = "";
+    }
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("studentName").value.trim();
+    const id = document.getElementById("studentID").value.trim();
+    const password = passwordInput.value;
+
+    const savedName = localStorage.getItem("studentName");
+    const savedID = localStorage.getItem("studentID");
+    const savedPassword = localStorage.getItem("password");
+
+    loginAttempts = parseInt(localStorage.getItem("loginAttempts")) || 0;
+
+    if (loginAttempts >= maxAttempts) {
+      errorMsg.textContent = "تم إيقاف الحساب مؤقتًا بعد 5 محاولات فاشلة.";
+      return;
+    }
+
+    if (name === savedName && id === savedID && password === savedPassword) {
+      localStorage.setItem("loginAttempts", "0");
+      window.location.href = "students.html";
+    } else {
+      loginAttempts++;
+      localStorage.setItem("loginAttempts", loginAttempts);
+      errorMsg.textContent = `البيانات غير صحيحة. المحاولة ${loginAttempts}/${maxAttempts}`;
+    }
+  });
+
+  function showLoginForm() {
+    afterRegisterButtons.style.display = "none";
+    form.style.display = "block";
+    isRegistering = false;
+    toggleFormState();
+    clearAutofill();
+  }
+
+  function goToHome() {
+    window.location.href = "index.html";
+  }
+</script>
+ <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* زر المنيو */
+    .custom-menu-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .custom-menu-btn span {
+      height: 4px;
+      width: 100%;
+      background-color: #333;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+
+    .custom-menu-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .custom-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .custom-menu-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* الخلفية */
+    .custom-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .custom-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* القائمة الجانبية */
+    .custom-sidebar {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      height: 100vh;
+      width: 50%;
+      background-color: #ffffff;
+      padding: 40px 20px;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+      transition: right 0.3s ease;
+      z-index: 1050;
+       text-align: left;
+        list-style-type: none;
+  padding-left: 2.5em; 
+    }
+
+    .custom-sidebar.show {
+      right: 0;
+    }
+
+    .custom-sidebar ul {
+      list-style: none;
+    }
+
+    .custom-sidebar li {
+      margin: 20px 0;
+    }
+
+    .custom-sidebar a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- الزر -->
+  <div class="custom-menu-btn" id="custom-menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- الخلفية -->
+  <div class="custom-overlay" id="custom-overlay"></div>
+
+  <!-- القائمة -->
+  <div class="custom-sidebar" id="custom-sidebar">
+      <li ><a  style="font-size: larger;color:rgb(39, 33, 33)" href="index.html" class="fas fa-home"   >   H o m e</a></li>
+      <li ><a  style="font-size: medium;color:#272121" href="sh1.html"class="fas fa-user-friends"> Parents' Community
+      <li ><a  style="font-size: medium;color:rgb(39, 33, 33)" href="sh.html" class="fas fa-users"> students' Community
+</a></li>
+<li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="arabic.html"class="fas fa-globe"> Language</a></li>
+<li ><a style="font-size:medium;color:rgb(39, 33, 33)" href="plan.html" class="fas fa-book" >   Academic Year Plan</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="rules" class="fas fa-gavel">  School's Rules and Regulations</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="contact"class="fas fa-phone"> Contact Us</a></li>
+                        <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="about us.html"class="fas fa-info-circle">   About us</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="https://maps.app.goo.gl/USy5qLPQj5uJRM2x5"class="fas fa-map-marker-alt"> Our Location</a></li>
+      
+
+  </div>
+
+  <!-- جافاسكربت -->
+  <script>
+    const btn = document.getElementById("custom-menu-btn");
+    const sidebar = document.getElementById("custom-sidebar");
+    const overlay = document.getElementById("custom-overlay");
+
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      sidebar.classList.toggle("show");
+      overlay.classList.toggle("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      btn.classList.remove("active");
+      sidebar.classList.remove("show");
+      overlay.classList.remove("show");
+    });
+  </script>
+
+
+</body>
+</html>

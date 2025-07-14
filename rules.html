@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title> My school </title>
+    <link rel="icon" href="ii.png" type="image/png">
+    <link rel="stylesheet" href="rules.css"> 
+</head>
+<body>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* زر المنيو */
+    .custom-menu-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .custom-menu-btn span {
+      height: 4px;
+      width: 100%;
+      background-color: #333;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+
+    .custom-menu-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .custom-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .custom-menu-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* الخلفية */
+    .custom-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .custom-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* القائمة الجانبية */
+    .custom-sidebar {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      height: 100vh;
+      width: 50%;
+      background-color: #ffffff;
+      padding: 40px 20px;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+      transition: right 0.3s ease;
+      z-index: 1050;
+    }
+
+    .custom-sidebar.show {
+      right: 0;
+    }
+
+    .custom-sidebar ul {
+      list-style: none;
+    }
+
+    .custom-sidebar li {
+      margin: 20px 0;
+    }
+
+    .custom-sidebar a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- الزر -->
+  <div class="custom-menu-btn" id="custom-menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- الخلفية -->
+  <div class="custom-overlay" id="custom-overlay"></div>
+
+  <!-- القائمة -->
+  <div class="custom-sidebar" id="custom-sidebar">
+      <li ><a  style="font-size: larger;color:rgb(39, 33, 33)" href="index.html" class="fas fa-home"   >   H o m e</a></li>
+      <li ><a  style="font-size: medium;color:#272121" href="sh1.html"class="fas fa-user-friends"> Parents' Community
+      <li ><a  style="font-size: medium;color:rgb(39, 33, 33)" href="sh.html" class="fas fa-users"> students' Community
+</a></li>
+<li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="arabic.html"class="fas fa-globe"> Language</a></li>
+<li ><a style="font-size:medium;color:rgb(39, 33, 33)" href="plan.html" class="fas fa-book" >   Academic Year Plan</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="rules" class="fas fa-gavel">  School's Rules and Regulations</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="contact"class="fas fa-phone"> Contact Us</a></li>
+                        <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="about us.html"class="fas fa-info-circle">   About us</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="https://maps.app.goo.gl/USy5qLPQj5uJRM2x5"class="fas fa-map-marker-alt"> Our Location</a></li>
+      <li><a href="#"></a></li>
+
+  </div>
+
+  <!-- جافاسكربت -->
+  <script>
+    const btn = document.getElementById("custom-menu-btn");
+    const sidebar = document.getElementById("custom-sidebar");
+    const overlay = document.getElementById("custom-overlay");
+
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      sidebar.classList.toggle("show");
+      overlay.classList.toggle("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      btn.classList.remove("active");
+      sidebar.classList.remove("show");
+      overlay.classList.remove("show");
+    });
+  </script>
+
+</body>
+</html>
+ <div class="st" style="color: #272121;background-color:#ffffff ;">
+    <h1 style="margin: 1.5em;  text-shadow:2px 2px 2px rgb(228, 225, 225)" class="st">School Rules and Regulations</h1>
+    </div>
+    <ul>
+        <li style="margin: 1em;"><i>The student and their guardian must pledge to abide by the school's rules and regulations in order to maintain order within the school campus.</li>
+    </ul>
+    <ol>
+        <h3>
+Rules are established to maintain order, and every rule has a reason that contributes to preserving that order.</h3>
+        <li class="li">Completing Assigned Homework</li>
+        <dd>
+Students must complete and submit all homework and assignments given by their teachers on time.
+Reason: This helps reinforce classroom learning, develop responsibility, and ensure academic progress.</dd>
+        <li class="li">Regular Attendance and Excused Absences</li>
+        <dd>
+            Students are required to attend all school days regularly and may only be absent with a valid excuse.
+            Reason: Consistent attendance is essential for academic success and ensures students do not fall behind.
+            
+        </dd>
+        <li class="li">Wearing the Official School Uniform</li>
+        <dd>
+All students must wear the official school uniform properly and consistently.
+Reason: The uniform promotes equality, discipline, and a sense of belonging within the school community.
+
+        </dd>
+        <li class="li">Respecting Others and Avoiding Bullying</li>
+        <dd>
+Students must avoid any form of bullying, harassment, or causing trouble to fellow students.
+Reason: Respect and kindness help create a safe and supportive school environment for everyone.
+        </dd>
+        <li class="li">Following Teacher Instructions and Classroom Discipline</li>
+        <dd>
+Students must follow the instructions of teachers and maintain discipline in class.
+Reason: Respecting teachers' authority ensures a focused and respectful learning environment.</dd>
+         <li class="li">Accepting Disciplinary Actions When Violating Rules</li>
+         <dd>
+In case of violating school rules, students must accept the disciplinary actions decided by the teachers’ committee.
+Reason: Accountability teaches responsibility and helps correct behavior constructively.
+</dd>
+         <li class="li">Respecting School Property and Environment</li>
+         <dd>
+Students must respect and take care of school property and keep the school environment clean.
+Reason: Maintaining the school’s facilities and cleanliness reflects responsibility and consideration for others.
+
+</dd>
+    </ol>
+    <p style="margin: 1.5em; font-size:larger"><i>
+                ***With respect and appreciation,
+The School Committee.***</i></p>
+    
+</body>
+</html>

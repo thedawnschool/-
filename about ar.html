@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> My school </title>
+    <link rel="icon" href="ii.png" type="image/png">
+</head>
+<body>
+    </head>
+<body>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* زر المنيو */
+    .custom-menu-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .custom-menu-btn span {
+      height: 4px;
+      width: 100%;
+      background-color: #333;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+
+    .custom-menu-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .custom-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .custom-menu-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* الخلفية */
+    .custom-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .custom-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* القائمة الجانبية */
+    .custom-sidebar {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      height: 100vh;
+      width: 50%;
+      background-color: #ffffff;
+      padding: 40px 20px;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+      transition: right 0.3s ease;
+      z-index: 1050;
+    }
+
+    .custom-sidebar.show {
+      right: 0;
+    }
+
+    .custom-sidebar ul {
+      list-style: none;
+    }
+
+    .custom-sidebar li {
+      margin: 20px 0;
+    }
+
+    .custom-sidebar a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+        .st{
+   border-radius: 25px;
+  padding: 1px;
+  color: #272121;background-color:#ffffff ;
+}
+
+  </style>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- الزر -->
+  <div class="custom-menu-btn" id="custom-menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- الخلفية -->
+  <div class="custom-overlay" id="custom-overlay"></div>
+
+  <!-- القائمة -->
+  <div class="custom-sidebar" id="custom-sidebar">
+  <li ><a  style="font-size: larger;color:rgb(39, 33, 33)" href="arabic.html" class="fas fa-home"   >   الصفخة الرئيسية</a></li>
+       <li ><a  style="font-size: medium;color:#272121" href="sh 1ar.html"class="fas fa-user-friends"> مجتمع الآباء</a>
+      <li ><a  style="font-size: medium;color:rgb(39, 33, 33)" href="sh ar.html" class="fas fa-users"> مجتمع الطلاب
+</a></li>
+<li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="index.html"class="fas fa-globe"> اللغة</a></li>
+<li ><a style="font-size:medium;color:rgb(39, 33, 33)" href="plan ar.html" class="fas fa-book" >   خطة العام الدراسي</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="rules ar.html" class="fas fa-gavel">  اللوائح المدرسية</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="contact ar.html"class="fas fa-phone">تواصل معنا</a></li>
+            <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="about ar.html"class="fas fa-info-circle">  من نحن</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="https://maps.app.goo.gl/USy5qLPQj5uJRM2x5"class="fas fa-map-marker-alt"> موقعنا</a></li>
+
+  </div>
+
+  <!-- جافاسكربت -->
+  <script>
+    const btn = document.getElementById("custom-menu-btn");
+    const sidebar = document.getElementById("custom-sidebar");
+    const overlay = document.getElementById("custom-overlay");
+
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      sidebar.classList.toggle("show");
+      overlay.classList.toggle("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      btn.classList.remove("active");
+      sidebar.classList.remove("show");
+      overlay.classList.remove("show");
+    });
+  </script>
+
+      <link rel="stylesheet" href="about us.css"> 
+      <div class="st">
+       <h1> تعرف علينا  </h1> 
+       </div> <br><br><br>
+<p style="font-size: 1.5em;font-family:serif";> 
+في جوهر رسالتنا، نحن مؤسسة تعليمية تسعى إلى تعزيز النمو، وتنمية الفضول، وتحقيق التميز الأكاديمي
+نؤمن بأن لكل طالب وطالبة القدرة على التألق، ومهمتنا هي مساعدتهم على الوصول إلى أقصى إمكاناتهم.
+من خلال مزيج من أساليب التعليم الحديثة، والدعم الفردي، والشغف بالتعلّم، نهدف إلى الارتقاء بجودة التعليم ورفع مستوى أداء الطلاب في جميع المراحل.
+رؤيتنا هي بناء جيل من المتعلمين الواثقين والقادرين، المستعدين للنجاح في عالم يتغير بسرعة.
+فنحن لسنا مجرد مدرسة — بل مجتمع تعليمي تُعد فيه الرحلة التعليمية تجربة مميزة، ويُقدَّر فيها كل طالب</p>
+    
+</body>
+</html>

@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* زر المنيو */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* تحويله إلى X */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* الخلفية المظللة */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* القائمة الجانبية */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -50%;
+  height: 100vh;
+  width: 50%;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  padding: 40px 20px;
+  transition: right 0.4s ease;
+  z-index: 1050;
+}
+
+.sidebar.show {
+  right: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 20px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> My school </title>
+    <link rel="icon" href="ii.png" type="image/png">
+    <link rel="stylesheet" href="rules.css"> 
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* زر المنيو */
+    .custom-menu-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .custom-menu-btn span {
+      height: 4px;
+      width: 100%;
+      background-color: #333;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+
+    .custom-menu-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .custom-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .custom-menu-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* الخلفية */
+    .custom-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .custom-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* القائمة الجانبية */
+    .custom-sidebar {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      height: 100vh;
+      width: 50%;
+      background-color: #ffffff;
+      padding: 40px 20px;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+      transition: right 0.3s ease;
+      z-index: 1050;
+    }
+
+    .custom-sidebar.show {
+      right: 0;
+    }
+
+    .custom-sidebar ul {
+      list-style: none;
+    }
+
+    .custom-sidebar li {
+      margin: 20px 0;
+    }
+
+    .custom-sidebar a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- الزر -->
+  <div class="custom-menu-btn" id="custom-menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- الخلفية -->
+  <div class="custom-overlay" id="custom-overlay"></div>
+
+  <!-- القائمة -->
+  <div class="custom-sidebar" id="custom-sidebar">
+        <li ><a  style="font-size: larger;color:rgb(39, 33, 33)" href="arabic.html" class="fas fa-home"   >   الصفخة الرئيسية</a></li>
+       <li ><a  style="font-size: medium;color:#272121" href="sh 1ar.html"class="fas fa-user-friends"> مجتمع الآباء</a>
+      <li ><a  style="font-size: medium;color:rgb(39, 33, 33)" href="sh ar.html" class="fas fa-users"> مجتمع الطلاب
+</a></li>
+<li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="index.html"class="fas fa-globe"> اللغة</a></li>
+<li ><a style="font-size:medium;color:rgb(39, 33, 33)" href="plan ar.html" class="fas fa-book" >   خطة العام الدراسي</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="rules ar.html" class="fas fa-gavel">  اللوائح المدرسية</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="contact ar.html"class="fas fa-phone">تواصل معنا</a></li>
+            <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="about ar.html"class="fas fa-info-circle">  من نحن</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="https://maps.app.goo.gl/USy5qLPQj5uJRM2x5" class="fas fa-map-marker-alt"> موقعنا</a></li>
+
+  </div>
+
+  <!-- جافاسكربت -->
+  <script>
+    const btn = document.getElementById("custom-menu-btn");
+    const sidebar = document.getElementById("custom-sidebar");
+    const overlay = document.getElementById("custom-overlay");
+
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      sidebar.classList.toggle("show");
+      overlay.classList.toggle("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      btn.classList.remove("active");
+      sidebar.classList.remove("show");
+      overlay.classList.remove("show");
+    });
+  </script>
+
+</body>
+</html>
+ <div class="st">
+    <h1 style="margin: 1.5em;">اللوائح المدرسية</h1>
+    </div>
+    <ul>
+        <li style="margin: 1em;"><i>يجب على الطالب وولي أمره التعهد بالالتزام بقواعد وأنظمة المدرسة، حفاظًا على النظام داخل الحرم المدرسي.</li>
+    </ul>
+    <ol>
+        <h3>إن القواعد وُضعت لضمان الانضباط، وكل قاعدة لها غاية تخدم الحفاظ على بيئة منظمة وآمنة
+</h3>
+        <li class="li">إتمام الواجبات المنزلية المقررة</li>
+        <dd>يجب على الطلاب إتمام وتسليم جميع الواجبات والمهام التي يكلّفهم بها المعلمون في الوقت المحدد<br>
+يساعد ذلك على ترسيخ ما تم تعلمه داخل الصف، وتنمية حسّ المسؤولية، وضمان التقدّم الأكاديمي.
+</dd>
+        <li class="li">الانتظام في الحضور والغياب المبرّر</li>
+        <dd>
+يُطلب من الطلاب الحضور إلى المدرسة بانتظام طوال أيام العام الدراسي، ولا يُسمح بالغياب إلا بعذر مقبول<br>
+فالانتظام في الحضور ضروري لتحقيق النجاح الأكاديمي، ويضمن عدم تراجع مستوى الطالب أو تأخره عن زملائه
+
+
+            
+        </dd>
+        <li class="li">الالتزام بالزي المدرسي الرسمي</li>
+        <dd>
+يجب على جميع الطلاب ارتداء الزي المدرسي الرسمي بشكل لائق ومنتظم<br>
+فالزي يعزز المساواة والانضباط، ويُنمّي الشعور بالانتماء داخل مجتمع المدرسة
+
+        </dd>
+        <li class="li">التحلي بالأخلاق واحترام الغير والامتناع عن الإساءة</li>
+        <dd>
+يلتزم الطالب بالامتناع التام عن ممارسة أي نوع من أنواع التنمّر أو الإساءة أو إزعاج زملائه، حيث يُعدّ احترام الآخرين والتعامل بلطف أساسًا في بناء بيئة تعليمية آمنة ومحفّزة للجميع
+        </dd>
+        <li class="li">الامتثال لتوجيهات الهيئة التعليمية والحفاظ على النظام الصفي</li>
+        <dd>يلتزم الطالب بالامتثال لتعليمات المعلمين والمحافظة على النظام داخل الصفوف الدراسية،<br>
+إذ يُعد احترام دور المعلم أساسًا في توفير بيئة تعليمية منظمة وفعّالة.
+</dd>
+         <li class="li">الاعتراف بالمخالفة والقبول بالإجراء التأديبي المناسب</li>
+         <dd>
+يُعدّ التزام الطالب بتقبّل ما يصدر من اللجنة التعليمية من إجراءات تأديبية عند مخالفته لأنظمة المدرسة جزءًا أساسيًا من عملية التربية والانضباط. فالمساءلة تعزّز الشعور بالمسؤولية، وتسهم في توجيه السلوك نحو الأفضل.
+</dd>
+         <li class="li">الحفاظ على ممتلكات المدرسة والاهتمام بنظافتها</li>
+         <dd>
+يلتزم الطالب بالحفاظ على ممتلكات المدرسة من تجهيزات وأثاث ومرافق، والحرص على نظافة البيئة المدرسية.
+إذ إن العناية بالمكان تعبّر عن وعي الطالب، وتعكس احترامه لحقوق زملائه وحرصه على بيئة تعليمية صحية وآمنة.
+
+</dd>
+    </ol>
+    <p style="margin: 1.5em; font-size:larger"><i>
+               *** مع فائق الاحترام والتقدير  ***<br>
+لجنة المدرسة ***</i></p>
+    
+</body>
+</html>

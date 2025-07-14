@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title> My school </title>
+    <link rel="icon" href="ii.png" type="image/png">
+</head>
+<link rel="stylesheet" href="plan.css">
+<body>
+    <!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قائمة جانبية مخصصة</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* زر المنيو */
+    .custom-menu-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .custom-menu-btn span {
+      height: 4px;
+      width: 100%;
+      background-color: #333;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+
+    .custom-menu-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .custom-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .custom-menu-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* الخلفية */
+    .custom-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .custom-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* القائمة الجانبية */
+    .custom-sidebar {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      height: 100vh;
+      width: 50%;
+      background-color: #ffffff;
+      padding: 40px 20px;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+      transition: right 0.3s ease;
+      z-index: 1050;
+    }
+
+    .custom-sidebar.show {
+      right: 0;
+    }
+
+    .custom-sidebar ul {
+      list-style: none;
+    }
+
+    .custom-sidebar li {
+      margin: 20px 0;
+    }
+    .st{
+   border-radius: 25px;
+  padding: 1px;
+  color: #272121;background-color:#ffffff ;
+}
+
+    .custom-sidebar a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- الزر -->
+  <div class="custom-menu-btn" id="custom-menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- الخلفية -->
+  <div class="custom-overlay" id="custom-overlay"></div>
+
+  <!-- القائمة -->
+  <div class="custom-sidebar" id="custom-sidebar">
+      <li ><a  style="font-size: larger;color:rgb(39, 33, 33)" href="index.html" class="fas fa-home"   >   H o m e</a></li>
+      <li ><a  style="font-size: medium;color:#272121" href="sh1.html"class="fas fa-user-friends"> Parents' Community
+      <li ><a  style="font-size: medium;color:rgb(39, 33, 33)" href="sh.html" class="fas fa-users"> students' Community
+</a></li>
+<li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="arabic.html"class="fas fa-globe"> Language</a></li>
+<li ><a style="font-size:medium;color:rgb(39, 33, 33)" href="plan.html" class="fas fa-book" >   Academic Year Plan</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="rules" class="fas fa-gavel">  School's Rules and Regulations</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="contact"class="fas fa-phone"> Contact Us</a></li>
+                  <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="about us.html"class="fas fa-info-circle">   About us</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="https://maps.app.goo.gl/USy5qLPQj5uJRM2x5"class="fas fa-map-marker-alt"> Our Location</a></li>
+
+  </div>
+
+  <!-- جافاسكربت -->
+  <script>
+    const btn = document.getElementById("custom-menu-btn");
+    const sidebar = document.getElementById("custom-sidebar");
+    const overlay = document.getElementById("custom-overlay");
+
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      sidebar.classList.toggle("show");
+      overlay.classList.toggle("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      btn.classList.remove("active");
+      sidebar.classList.remove("show");
+      overlay.classList.remove("show");
+    });
+  </script>
+
+</body>
+</html>
+
+    <div class="st">
+    <h1 style="margin: 1.5em;"><i> Academic Year Plan</h1>
+    <br>
+    </div>
+    <ul>
+
+    <h2 style="margin: 1.5em;"><li>📘 First Term:</li></h2>
+<p>*Start Date: September 15, 2025</p>
+<p>*End Date: December 18, 2025</p>
+<p>*Midterm Exams: November 10 – November 15, 2025</p>
+<p>
+*Final Exams: December 10 – December 17, 2025</p>
+<p>*Winter Break: December 19, 2025 – January 6, 2026</p>
+
+
+
+
+
+<h2 style="margin: 1.5em;"><li>📗 Second Term:</li></h2>
+<p>Start Date: January 7, 2026</p>
+<p>*End Date: April 16, 2026</p>
+<p>*Midterm Exams: February 25 – March 2, 2026</p>
+<p>*Final Exams: April 9 – April 16, 2026</p>
+<p>*Spring Break: April 17 – April 30, 2026></p>
+
+<h2 style="margin: 1em;">📕 Summer Term (Optional / Remedial):</h2> 
+<p>Start Date: May 5, 2026</p>
+<p>End Date: June 20, 2026</p>
+<h3 style="margin: 1em;">FOCUS:</h3> 
+    <li class="li"  style="margin: 1em;">
+Remedial classes</li>
+    <li class="li  "style="margin: 1em;">Enrichment activities</li>
+    <li class="li "style="margin: 1em;">Project-based learning</li>
+    <li class="li" style="margin: 1em;">Student evaluations</li>
+   
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+body{
+
+    margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000000; /* أبيض دافئ */
+  color: #fdfcfb;; /* بني */
+
+
+}
+p{
+  margin: 1em;
+  font-size: 20px;
+}
+.li{
+  font-size: 18px;
+}
+    .st{
+   border-radius: 25px;
+  padding: 1px;
+  color: #272121;background-color:#ffffff ;
+}

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title> My school </title>
+</head>
+    <link rel="icon" href="ii.png" type="image/png">
+<body>
+     <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      background-color: #ffffff;
+    }
+
+    /* زر المنيو */
+    .custom-menu-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .custom-menu-btn span {
+      height: 4px;
+      width: 100%;
+      background-color: #333;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+
+    .custom-menu-btn.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .custom-menu-btn.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .custom-menu-btn.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* الخلفية */
+    .custom-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.3s ease;
+      z-index: 1000;
+    }
+
+    .custom-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* القائمة الجانبية */
+    .custom-sidebar {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      height: 100vh;
+      width: 50%;
+      background-color: hsl(227, 55%, 57%);
+      padding: 40px 20px;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+      transition: right 0.3s ease;
+      z-index: 1050;
+    }
+
+    .custom-sidebar.show {
+      right: 0;
+    }
+
+    .custom-sidebar ul {
+      list-style: none;
+    }
+
+    .custom-sidebar li {
+      margin: 20px 0;
+    }
+
+    .custom-sidebar a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+
+  </style>
+</head>
+<link rel="stulesheet" href="index.html">
+<body>
+  <link rel="stulesheet" href="index.html">
+
+  <!-- الزر -->
+  <div class="custom-menu-btn" id="custom-menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- الخلفية -->
+  <div class="custom-overlay" id="custom-overlay"></div>
+
+  <!-- القائمة -->
+  <div class="custom-sidebar" id="custom-sidebar">
+      <li ><a  style="font-size: larger;color:rgb(39, 33, 33)" href="index.html" class="fas fa-home"   >   H o m e</a></li>
+      <li ><a  style="font-size: medium;color:#272121" href="sh1.html"class="fas fa-user-friends"> Parents' Community
+      <li ><a  style="font-size: medium;color:rgb(39, 33, 33)" href="sh.html" class="fas fa-users"> students' Community
+</a></li>
+<li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="arabic.html"class="fas fa-globe"> Language</a></li>
+<li ><a style="font-size:medium;color:rgb(39, 33, 33)" href="plan.html" class="fas fa-book" >   Academic Year Plan</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="rules" class="fas fa-gavel">  School's Rules and Regulations</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="contact"class="fas fa-phone"> Contact Us</a></li>
+                        <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="about us.html"class="fas fa-info-circle">   About us</a></li>
+      <li ><a style="font-size: medium;color:rgb(39, 33, 33)" href="https://maps.app.goo.gl/USy5qLPQj5uJRM2x5"class="fas fa-map-marker-alt"> Our Location</a></li>
+     
+
+  </div>
+
+  <!-- جافاسكربت -->
+  <script>
+    const btn = document.getElementById("custom-menu-btn");
+    const sidebar = document.getElementById("custom-sidebar");
+    const overlay = document.getElementById("custom-overlay");
+
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      sidebar.classList.toggle("show");
+      overlay.classList.toggle("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      btn.classList.remove("active");
+      sidebar.classList.remove("show");
+      overlay.classList.remove("show");
+    });
+  </script>
+<h1 style="text-align: center;margin :1em;color:hsl(171, 12%, 46%);"> GRADE 1</h1>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+  <a href="https://facebook.com" target="_blank" style="font-size: 4em; margin: 1em; color: rgb(7, 76, 253);">
+    <i class="fab fa-facebook-square"></i>
+  </a>
+  <a href="https://wa.me/your_number" target="_blank" style="font-size: 4.5em; margin: 1em; color: rgb(3, 151, 11);">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://t.me/your_username" target="_blank" style="font-size: 4em; margin: 1em; color: rgb(7, 139, 206);">
+    <i class="fab fa-telegram"></i>
+  </a>
+  <a href="mailto:youremail@example.com" style="font-size: 4em; margin: 1.2em; color: rgb(9, 134, 244);">
+    <i class="fas fa-envelope"></i>
+
+    
+  </a>
+</div>
+
+<hr style="color: hsl(55, 87%, 18%);">
+
+<h1 style="text-align: center;margin :1em;color:hsl(0, 15%, 62%);"> GRADE 2</h1>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+  <a href="https://facebook.com" target="_blank" style="font-size: 4em; margin: 1em; color: rgb(7, 76, 253);">
+    <i class="fab fa-facebook-square"></i>
+  </a>
+  <a href="https://wa.me/your_number" target="_blank" style="font-size: 4.5em; margin: 1em; color: rgb(3, 151, 11);">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://t.me/your_username" target="_blank" style="font-size: 4em; margin: 1em; color: rgb(7, 139, 206);">
+    <i class="fab fa-telegram"></i>
+  </a>
+  <a href="mailto:youremail@example.com" style="font-size: 4em; margin: 1.2em; color: rgb(9, 134, 244);">
+    <i class="fas fa-envelope"></i>
+
+    
+  </a>
+</div>
+
+<hr style="color: blue;">
+
+<h1  style="text-align: center;margin :1em;color:hsl(0, 8%, 77%);"> GRADE 3</h1>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+  <a href="https://facebook.com" target="_blank" style="font-size: 4em; margin: 1em; color: rgb(7, 76, 253);">
+    <i class="fab fa-facebook-square"></i>
+  </a>
+  <a href="https://wa.me/your_number" target="_blank" style="font-size: 4.5em; margin: 1em; color: rgb(3, 151, 11);">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://t.me/your_username" target="_blank" style="font-size: 4em; margin: 1em; color: rgb(7, 139, 206);">
+    <i class="fab fa-telegram"></i>
+  </a>
+  <a href="mailto:youremail@example.com" style="font-size: 4em; margin: 1.2em; color: rgb(9, 134, 244);">
+    <i class="fas fa-envelope"></i>
+
+    
+  </a>
+</div>
+
+<hr style="color: aqua;">
+
+<h1 style="text-align: center;margin :1em;color:hsl(0, 4%, 45%);"> GRADE 4</h1>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+  <a href="https://facebook.com" target="_blank" style="font-size: 4em; margin: 1em; color: rgb(7, 76, 253);">
+    <i class="fab fa-facebook-square"></i>
+  </a>
+  <a href="https://wa.me/your_number" target="_blank" style="font-size: 4.5em; margin: 1em; color: rgb(3, 151, 11);">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://t.me/your_username" target="_blank" style="font-size: 4em; margin: 1em; color: rgb(7, 139, 206);">
+    <i class="fab fa-telegram"></i>
+  </a>
+  <a href="mailto:youremail@example.com" style="font-size: 4em; margin: 1.2em; color: rgb(9, 134, 244);">
+    <i class="fas fa-envelope"></i>
+
+    
+  </a>
+</div>
+
+<hr style="color: hsl(134, 87%, 69%);">
+
+<h1 style="text-align: center;margin :1em;color:hsl(0, 4%, 45%);"> GRADE 5</h1>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+  <a href="https://facebook.com" target="_blank" style="font-size: 4em; margin: 1em; color: rgb(7, 76, 253);">
+    <i class="fab fa-facebook-square"></i>
+  </a>
+  <a href="https://wa.me/your_number" target="_blank" style="font-size: 4.5em; margin: 1em; color: rgb(3, 151, 11);">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://t.me/your_username" target="_blank" style="font-size: 4em; margin: 1em; color: rgb(7, 139, 206);">
+    <i class="fab fa-telegram"></i>
+  </a>
+  <a href="mailto:youremail@example.com" style="font-size: 4em; margin: 1.2em; color: rgb(9, 134, 244);">
+    <i class="fas fa-envelope"></i>
+
+    
+  </a>
+</div>
+
+<hr style="color: hsl(0, 84%, 43%);">
+
+<h1 style="text-align: center;margin :1em;color:hsl(0, 4%, 45%);"> GRADE 6</h1>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+  <a href="https://facebook.com" target="_blank" style="font-size: 4em; margin: 1em; color: rgb(7, 76, 253);">
+    <i class="fab fa-facebook-square"></i>
+  </a>
+  <a href="https://wa.me/your_number" target="_blank" style="font-size: 4.5em; margin: 1em; color: rgb(3, 151, 11);">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://t.me/your_username" target="_blank" style="font-size: 4em; margin: 1em; color: rgb(7, 139, 206);">
+    <i class="fab fa-telegram"></i>
+  </a>
+  <a href="mailto:youremail@example.com" style="font-size: 4em; margin: 1.2em; color: rgb(9, 134, 244);">
+    <i class="fas fa-envelope"></i>
+
+    
+  </a>
+</div>
+
+<hr>
+

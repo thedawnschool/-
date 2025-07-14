@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قائمة منسدلة مميزة</title>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .dropdown-unique {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-btn-unique {
+      background-color: #222;
+      color: white;
+      padding: 12px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-btn-unique:hover {
+      background-color: #444;
+    }
+
+    .arrow-unique {
+      transition: transform 0.3s ease;
+      font-size: 16px;
+    }
+
+    .arrow-unique.rotate {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-content-unique {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: white;
+      min-width: 220px;
+      border-radius: 8px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+      z-index: 10;
+    }
+
+    .dropdown-content-unique.show {
+      max-height: 1000px;
+      opacity: 1;
+    }
+
+    .dropdown-content-unique a {
+      display: block;
+      padding: 14px 20px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.2s ease;
+    }
+
+    .dropdown-content-unique a:hover {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+<div class="dropdown-unique">
+  <button class="dropdown-btn-unique" onclick="toggleUniqueDropdown()">
+    القائمة الرئيسية
+    <span id="arrowUnique" class="arrow-unique">▼</span>
+  </button>
+  <div class="dropdown-content-unique" id="dropdownUniqueMenu">
+    <a href="#">العنصر الأول</a>
+    <a href="#">العنصر الثاني</a>
+    <a href="#">العنصر الثالث</a>
+    <a href="#">العنصر الرابع</a>
+    <a href="#">العنصر الخامس</a>
+    <a href="#">العنصر السادس</a>
+  </div>
+</div>
+
+<script>
+  const dropdownUnique = document.getElementById("dropdownUniqueMenu");
+  const arrowUnique = document.getElementById("arrowUnique");
+
+  function toggleUniqueDropdown() {
+    dropdownUnique.classList.toggle("show");
+    arrowUnique.classList.toggle("rotate");
+  }
+
+  window.addEventListener("click", function(e) {
+    const isInside = e.target.closest('.dropdown-unique');
+    if (!isInside) {
+      dropdownUnique.classList.remove("show");
+      arrowUnique.classList.remove("rotate");
+    }
+  });
+</script>
+
+</body>
+</html>
